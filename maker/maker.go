@@ -63,6 +63,10 @@ func (m *Maker) Generate() error {
 	m.pdf.SetY(m.pdf.GetY() + defaultStep)
 	m.setNetworks()
 
+	// setting education.
+	m.pdf.SetY(m.pdf.GetY() + defaultStep + smalltStep)
+	m.setEducation()
+
 	// setting work experience.
 	m.pdf.SetY(m.pdf.GetY() + defaultStep)
 	m.pdf.SetY(m.pdf.GetY() + defaultStep)
@@ -148,6 +152,19 @@ func (m *Maker) setExperience() {
 			m.pdf.GetY(),
 			m.pdf.GetX()+pageWidth-3*defaultMargin, m.pdf.GetY())
 		m.pdf.SetX(defaultMargin)
+	}
+}
+
+func (m *Maker) setEducation() {
+	m.setMediumLabel("Education")
+
+	_, height := m.pdf.GetXY()
+	m.pdf.SetXY(defaultMargin, height-smalltStep)
+
+	for _, edu := range m.cv.Education {
+		txt := strings.Join([]string{edu.Institution, edu.StudyType, edu.Area}, ", ")
+		m.pdf.Cell(defaultCellWidth, defaultCellHeight, txt)
+		m.pdf.SetXY(defaultMargin, m.pdf.GetY()+defaultStep)
 	}
 }
 
