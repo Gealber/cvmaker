@@ -18,6 +18,10 @@ make run
 This will generate a file `resume.pdf` with your CV.
 Take a look at the file `example.json` to see an example of a valid `resume.json` file.
 
+# CV example
+
+Checkout a CV example [here](https://mega.nz/file/gZdFCI4K#l3rB7rohKi2Rc4ZSsSyfl0003y5oBa8O0hD08jMirrk).
+
 
 # TODO
 
