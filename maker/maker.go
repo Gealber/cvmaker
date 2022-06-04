@@ -1,7 +1,6 @@
 package maker
 
 import (
-	"log"
 	"strings"
 
 	"github.com/jung-kurt/gofpdf"
@@ -42,7 +41,6 @@ func (m *Maker) Generate() error {
 	m.setName()
 
 	// seting label.
-	log.Println(m.pdf.GetY())
 	m.pdf.SetY(2*defaultMargin + smalltStep)
 	m.setColor(redSoft)
 	m.setLabel()

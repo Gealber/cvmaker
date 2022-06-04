@@ -1,0 +1,194 @@
+{
+  "basics": {
+    "name": "Gealber Morales Basalo",
+    "label": "Software Developer",
+    "image": "https://res.cloudinary.com/djjd0wi5i/image/upload/w_200,h_200,c_fill,r_max/profile_dppnvw.jpg",
+    "email": "gealbermorales@gmail.com",
+    "phone": "+375 (29) 123 45 67",
+    "url": "https://gealber.com",
+    "summary": [
+      "Amazing guy who lost almost all of his hair due to math and programming",
+      "More than one hundred years of professional industry experience with software development in Golang.",
+      "Hands-on experience with cloud infrastructures such as AWS, GCP and Heroku.",
+      "Spent two years teaching math, never again"
+    ],
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/gealber-morales-0a2732189/"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/Gealber"
+      },
+      {
+        "network": "Stackoverflow",
+        "url": "https://stackoverflow.com/users/11496631/gealber"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Turum turum",
+      "location": "Abu Dhabi, UAE",
+      "description": "Music",
+      "position": "Golang Developer",
+      "url": "https://www.turumturum.com/",
+      "startDate": "2022-04-01",
+      "endDate": "current",
+      "summary": "Turum turum is a music application for humming",
+      "highlights": [
+        "Working as a Golang Developer implementing sound music ultra-mega-plus service."
+      ]
+    },
+    {
+      "name": "University of lazy guys",
+      "location": "Havana, Cuba",
+      "description": "Principal university in Cuba focus on lazy guys",
+      "position": "Proffesor",
+      "url": "https://www.uci.cu/",
+      "startDate": "2018-09-01",
+      "endDate": "2020-10-09",
+      "summary": "Proffesor of Lineal Algebra and Calculus",
+      "highlights": [
+        "Was responsible for the technical growth of my students, focusing on their skills related to the subjects that I was teaching. Laziness in math"        
+      ]
+    }    
+  ],
+  "education": [
+    {
+      "institution": "University of Havana",
+      "url": "http://www.uh.cu/",
+      "area": "Mathematics",
+      "studyType": "Bachelor",
+      "startDate": "2014-09-01",
+      "endDate": "2018-07-06"
+    }
+  ],
+  "skills": [
+    {
+      "description": "Programming Language",
+      "value": [
+        "Golang",
+        "Python",
+        "C"
+      ]
+    },
+    {
+      "description": "Database",
+      "value": [
+        "MongoDB",
+        "PostgreSQL",
+        "Redis",
+        "SQLite"
+      ]
+    },
+    {
+      "description": "Message Queues",
+      "value": [
+        "NATS",
+        "EMQ X",
+        "ZeroMQ"
+      ]
+    },
+    {
+      "description": "Libraries",
+      "value": [
+        "libcurl"
+      ]
+    },
+    {
+      "description": "Frameworks",
+      "value": [
+        "Django",
+        "Flask",
+        "FastAPI",
+        "Ruby on Rails",
+        "Kore",
+        "NestJS"
+      ]
+    },
+    {
+      "description": "Cloud Platforms",
+      "value": [
+        "Amazon Web Services(AWS)",
+        "Google Cloud Platform(GCP)",        
+        "Azure",
+        "Heroku"
+      ]
+    },
+    {
+      "description": "Others",
+      "value": [
+        "Docker",
+        "Postman",
+        "Valgrind",
+        "Makefile"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Intermediate plus"
+    },
+    {
+      "language": "Russian",
+      "fluency": "Novice"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Personal Blog",
+      "description": "A blog where I can discuss about technologies and hacks that I enjoy )",
+      "highlights": [
+        "Made use of Google Cloud Platform resources as App Engine and Google Functions",
+        "Write articles about technologies and APIs that I find interesting, this requires a lot of previous investigation"
+      ],
+      "keywords": [
+        "Golang",
+        "Google cloud Platform",
+        "Blogging"
+      ],
+      "url": "https://gealber.com",
+      "type": "Website"
+    },
+    {
+      "name": "Devcli",
+      "description": "A CLI for the website dev.to, that allows the user to interact with the platform using",
+      "highlights": [
+        "Was involved in all the development of the project, taking whole responsibility for analysis, testing, prototyping and implementation",
+        "Implemented the full coverage of an external API that was used by the CLI, making the interaction with the platform through the CLI very simple",
+        "Got a better understanding of QT and its Python binding",
+        "Improved the development process, using GitHub Actions as a tool for Continuous Integration practice"
+      ],
+      "keywords": [
+        "Golang",
+        "Standard Library",
+        "dev.to"
+      ],
+      "url": "https://github.com/Gealber/devto-cli",
+      "type": "Command Line Interface"
+    },
+    {
+      "name": "Chess Reader",
+      "description": "Graphical user interface that allows you to read chess plays stored in PNG format.",
+      "highlights": [
+        "Designed and implemented the User Interface, making use of all of my knowledge at that time",
+        "Used the appropriate tools to develop this User Interface, taking into account the development time that was needed",
+        "Got a better understanding of QT and its Python binding",
+        "Developed dynamic, vibrant user interfaces to foster the application smooth operation"
+      ],
+      "keywords": [
+        "Python",
+        "QT",
+        "PyQT"
+      ],
+      "type": "application"
+    }
+  ]
+}

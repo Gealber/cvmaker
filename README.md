@@ -16,6 +16,7 @@ make run
 ```
 
 This will generate a file `resume.pdf` with your CV.
+Take a look at the file `example.json` to see an example of a valid `resume.json` file.
 
 
 # TODO
