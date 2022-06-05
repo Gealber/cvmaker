@@ -46,7 +46,7 @@ func (m *Maker) Generate() error {
 	m.setLabel()
 	m.pdf.SetY(m.pdf.GetY() + defaultStep)
 	m.setColor(grey)
-	m.pdf.Cell(defaultCellWidth, defaultMargin, "4+ years of experience")
+	m.pdf.Cell(defaultCellWidth, defaultMargin, m.cv.Basics.Years+" years of experience")
 
 	// setting image.
 	m.setImageProfile()

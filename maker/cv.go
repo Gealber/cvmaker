@@ -9,6 +9,7 @@ import (
 type Basic struct {
 	Name     string           `json:"name"`
 	Label    string           `json:"label"`
+	Years    string           `json:"years"`
 	Image    string           `json:"image"`
 	Email    string           `json:"email"`
 	Phone    string           `json:"phone"`

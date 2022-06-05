@@ -1,5 +1,6 @@
 # CV Maker
 
+One day project...
 Allows you to generate a CV using a information defined in a json file.
 
 ## Generating CV
@@ -23,10 +24,9 @@ Take a look at the file `example.json` to see an example of a valid `resume.json
 Checkout a CV example [here](https://mega.nz/file/MRdmiS5a#6BlqsEaqAza-ghD0J9odE91SsqnjyUNgbg9adOdVJ7c).
 
 
-# TODO
+# What is missing
 
-* Add unit tests
-* Add more documentation about the format of the json configuration file.
+* Unit tests
 * Make the script more customizable.
 * Make a simple website to allow the generation of this cv.
 
