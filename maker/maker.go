@@ -91,31 +91,6 @@ func (m *Maker) setNetworks() {
 	}
 }
 
-func (m *Maker) setSkills(skills []Skill) {
-	m.setMediumLabel("Technical Skills")
-	pageWidth, _ := m.pdf.GetPageSize()
-	m.pdf.SetY(m.pdf.GetY() + defaultStep)
-
-	for _, skill := range skills {
-		// description.
-		m.pdf.SetFont("Times", "B", defaultFontSize)
-
-		// values.
-		value := strings.Join(skill.Value, ", ")
-		// w := pageWidth - float64(len(skill.Description)) - 7*defaultMargin
-		// m.pdf.Cell(w, 5, value)
-		// log.Println(m.pdf.GetXY())
-		// m.pdf.Cell(defaultStep, defaultMargin, skill.Description+": "+value).
-		m.pdf.MultiCell(
-			pageWidth-defaultMargin, smalltStep,
-			skill.Description+": "+value,
-			"", "L", false,
-		)
-		m.pdf.SetFont("Times", "", smallFontSize)
-		m.pdf.SetY(m.pdf.GetY() + defaultMargin)
-	}
-}
-
 func (m *Maker) setExperience() {
 	m.setMediumLabel("Work Experience")
 	m.pdf.SetY(m.pdf.GetY() + defaultStep)
@@ -142,6 +117,17 @@ func (m *Maker) setExperience() {
 		if work.URL != "" {
 			m.pdf.SetY(m.pdf.GetY() + defaultStep)
 			m.pdf.Cell(defaultStep, defaultStep, "Company Website: "+work.URL)
+		}
+		// tech stack.
+		if len(work.Stack) > 0 {
+			stack := strings.Join(work.Stack, ", ")
+
+			m.pdf.SetY(m.pdf.GetY() + defaultStep)
+			m.pdf.MultiCell(
+				pageWidth-3*defaultMargin,
+				smallFontSize,
+				"Tech Stack: "+stack,
+				"", "L", false)
 		}
 
 		m.pdf.SetY(m.pdf.GetY() + defaultStep)

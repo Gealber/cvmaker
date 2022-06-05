@@ -41,6 +41,7 @@ type Work struct {
 	EndDate     string   `json:"endDate"`
 	Summary     string   `json:"summary"`
 	HighLights  []string `json:"highlights"`
+	Stack       []string `json:"stack"`
 }
 
 type Project struct {
@@ -50,11 +51,6 @@ type Project struct {
 	HighLights  []string `json:"highlights"`
 	Keywords    []string `json:"keywords"`
 	Type        string   `json:"type"`
-}
-
-type Skill struct {
-	Description string   `json:"description"`
-	Value       []string `json:"value"`
 }
 
 type Language struct {
@@ -67,7 +63,6 @@ type CV struct {
 	Education []Education `json:"education"`
 	Work      []Work      `json:"work"`
 	Projects  []Project   `json:"projects"`
-	Skills    []Skill     `json:"skills"`
 	Languages []Language  `json:"language"`
 }
 

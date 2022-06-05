@@ -20,7 +20,7 @@ Take a look at the file `example.json` to see an example of a valid `resume.json
 
 # CV example
 
-Checkout a CV example [here](https://mega.nz/file/gZdFCI4K#l3rB7rohKi2Rc4ZSsSyfl0003y5oBa8O0hD08jMirrk).
+Checkout a CV example [here](https://mega.nz/file/MRdmiS5a#6BlqsEaqAza-ghD0J9odE91SsqnjyUNgbg9adOdVJ7c).
 
 
 # TODO

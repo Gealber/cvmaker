@@ -39,7 +39,8 @@
       "summary": "Turum turum is a music application for humming",
       "highlights": [
         "Working as a Golang Developer implementing sound music ultra-mega-plus service."
-      ]
+      ],
+      "stack": ["TypeScript", "Docker", "NestJS", "MongoDB", "Redis", "Heroku"]
     },
     {
       "name": "University of lazy guys",
@@ -52,7 +53,8 @@
       "summary": "Proffesor of Lineal Algebra and Calculus",
       "highlights": [
         "Was responsible for the technical growth of my students, focusing on their skills related to the subjects that I was teaching. Laziness in math"        
-      ]
+      ],
+      "stack": ["TypeScript", "Docker", "NestJS", "MongoDB", "Redis", "Heroku"]
     }    
   ],
   "education": [
