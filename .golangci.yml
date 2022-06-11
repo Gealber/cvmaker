@@ -28,7 +28,6 @@ linters:
     - nestif
     - nilnil
     - unconvert
-    - varnamelen
     - whitespace
 
   disable:
@@ -39,6 +38,7 @@ linters:
     - goerr113
     - gofumpt
     - scopelint
+    - varnamelen
 
   # Enable presets.
   # https://golangci-lint.run/usage/linters
@@ -59,7 +59,6 @@ linters:
   # Run only fast linters from enabled linters set (first run won't be fast)
   # Default: false
   fast: true
-
 
 linters-settings:
   cyclop:
@@ -200,4 +199,3 @@ linters-settings:
     # Enforces newlines (or comments) after every multi-line function signature.
     # Default: false
     multi-func: false
-
