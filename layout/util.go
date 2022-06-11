@@ -1,6 +1,6 @@
 package layout
 
-func collides(r1, r2 region) bool {
+func collides(r1, r2 Region) bool {
 	// r1 tottally on the left side of r2.
 	leftSide := r1.TopLeft.X > r2.BottomRight.X
 	// r1 tottally on the right side of r2.
@@ -17,7 +17,7 @@ func collides(r1, r2 region) bool {
 	return true
 }
 
-func pointInRegion(p point, r region) bool {
+func pointInRegion(p point, r Region) bool {
 	bellowTopLeft := p.X > r.TopLeft.X && p.Y > r.TopLeft.Y
 	aboveBottomRight := p.X < r.BottomRight.X && p.Y < r.BottomRight.Y
 
