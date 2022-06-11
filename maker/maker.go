@@ -3,6 +3,7 @@ package maker
 import (
 	"strings"
 
+	"github.com/Gealber/cvmaker/layout"
 	"github.com/jung-kurt/gofpdf"
 )
 
@@ -10,14 +11,25 @@ import (
 type Maker struct {
 	pdf *gofpdf.Fpdf
 	cv  *CV
+	// ly layout in the pdf.
+	ly *layout.Layout
 }
 
 // NewCVMaker ...
-func NewCVMaker() *Maker {
+func NewCVMaker() (*Maker, error) {
 	cv := newCV()
 	pdf := gofpdf.New("P", "mm", "A4", "")
 
-	return &Maker{pdf: pdf, cv: cv}
+	ly, err := layout.DefaultLayout()
+	if err != nil {
+		return nil, err
+	}
+
+	return &Maker{
+		pdf: pdf,
+		cv:  cv,
+		ly:  ly,
+	}, nil
 }
 
 // Generate new cv, with data declared in resume.json file.
@@ -30,13 +42,34 @@ func (m *Maker) Generate() error {
 
 	m.pdf.AddPage()
 
-	m.pdf.SetLeftMargin(defaultMargin)
-	m.pdf.SetRightMargin(defaultMargin)
-	m.pdf.SetTopMargin(defaultMargin)
+	// err := m.paintLayout()
+	// if err != nil {
+	// 	return err
+	// }.
 
 	// setting some top margin.
 	m.pdf.SetXY(defaultMargin, defaultMargin)
 
+	// setBasics.
+	m.setBasics()
+
+	// setEducation.
+	m.pdf.SetY(m.pdf.GetY() + defaultStep + smalltStep)
+	m.setEducation()
+
+	// setting work experience.
+	m.pdf.SetY(m.pdf.GetY() + defaultStep)
+	m.pdf.SetY(m.pdf.GetY() + defaultStep)
+	m.setExperience()
+
+	// personal projects.
+	m.pdf.SetY(m.pdf.GetY() + defaultStep)
+	m.setProjects()
+
+	return m.pdf.OutputFileAndClose("resume.pdf")
+}
+
+func (m *Maker) setBasics() {
 	// setting name.
 	m.setName()
 
@@ -62,21 +95,43 @@ func (m *Maker) Generate() error {
 	// setting networks.
 	m.pdf.SetY(m.pdf.GetY() + defaultStep)
 	m.setNetworks()
+}
 
-	// setting education.
-	m.pdf.SetY(m.pdf.GetY() + defaultStep + smalltStep)
-	m.setEducation()
+func (m *Maker) paintLayout() error {
+	for _, region := range m.ly.Regions {
+		points := []gofpdf.PointType{
+			{
+				X: region.TopLeft.X,
+				Y: region.TopLeft.Y,
+			},
+			{
+				X: region.BottomRight.X,
+				Y: region.TopLeft.Y,
+			},
+			{
+				X: region.BottomRight.X,
+				Y: region.BottomRight.Y,
+			},
+			{
+				X: region.TopLeft.X,
+				Y: region.BottomRight.Y,
+			},
+		}
 
-	// setting work experience.
-	m.pdf.SetY(m.pdf.GetY() + defaultStep)
-	m.pdf.SetY(m.pdf.GetY() + defaultStep)
-	m.setExperience()
+		if region.Name == "Footer Line" {
+			m.setDrawColor(redSoft)
+		}
 
-	// personal projects.
-	m.pdf.SetY(m.pdf.GetY() + defaultStep)
-	m.setProjects()
+		m.pdf.Polygon(points, "D")
 
-	return m.pdf.OutputFileAndClose("resume.pdf")
+		if m.pdf.Error() != nil {
+			return m.pdf.Error()
+		}
+	}
+
+	m.setDefaultDrawColor()
+
+	return nil
 }
 
 func (m *Maker) setNetworks() {
@@ -240,4 +295,8 @@ func (m *Maker) setColor(c colorRGB) {
 
 func (m *Maker) setDrawColor(c colorRGB) {
 	m.pdf.SetDrawColor(c[0], c[1], c[2])
+}
+
+func (m *Maker) setDefaultDrawColor() {
+	m.setDrawColor(black)
 }

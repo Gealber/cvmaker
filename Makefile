@@ -7,11 +7,11 @@ PREFIX?=/usr/local
 ENV?=development
 
 APP := cvmaker
-# VERSION := $(shell git describe --always)
+VERSION := $(shell git describe --always)
 
 RFC_3339 := "+%Y-%m-%dT%H:%M:%SZ"
-# DATE := $(shell date -u $(RFC_3339))
-# COMMIT := $(shell git rev-list -1 HEAD)
+DATE := $(shell date -u $(RFC_3339))
+COMMIT := $(shell git rev-list -1 HEAD)
 
 OPTS?=GO111MODULE=on
 
@@ -37,4 +37,3 @@ clean: ## Cleaning binary
 
 help: ## Show commands availables
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
