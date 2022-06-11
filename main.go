@@ -7,7 +7,10 @@ import (
 )
 
 func main() {
-	cvMaker := maker.NewCVMaker()
+	cvMaker, err := maker.NewCVMaker()
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	log.Println("Creating cv...")
 
